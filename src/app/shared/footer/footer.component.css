@@ -1,0 +1,21 @@
+/* Footer Container Class */
+.footer-container[_ngcontent-c0] {
+    order: 3;
+    height: 64px;
+    width: 100%;
+    background: #2d2727;
+    color: #fff;
+}
+
+div, footer{
+  display: block;
+}
+p {
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 50px;
+    margin-inline-end: 100px;
+    font-family: sans-serif;
+    padding-top: 20px;
+}

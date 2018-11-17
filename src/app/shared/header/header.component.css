@@ -1,0 +1,51 @@
+/* main header class */
+.main-header[_ngcontent-c2] {
+    background: #2d2727;
+    height: 70px;
+    padding: 10px 40px;
+    display: flex;
+    flex: 1 1 100%;
+}
+
+/* Marvel Logo Class */
+.logo-marvel[_ngcontent-c2] {
+    height: 100%;
+    flex: 1 1 100px;
+    background-image: url("/src/assets/img/marvel.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Searcher Container Class */
+.container-searcher[_ngcontent-c2] {
+    background: white;
+    flex: 2 1 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+/* Searcher Class */
+.searcher[_ngcontent-c2] {
+    width: 90%;
+    height: 120%;
+    font-size: 20px;
+    border-top-color: initial;
+    border-top-style: initial;
+    border-top-width: 0px;
+    border-right-color: initial;
+    border-right-style: initial;
+    border-right-width: 0px;
+    border-bottom-color: initial;
+    border-bottom-style: initial;
+    border-bottom-width: 0px;
+    border-left-color: initial;
+    border-left-style: initial;
+    border-left-width: 0px;
+}
+
+/* Space Class */
+.space[_ngcontent-c2] {
+    height: 100%;
+    flex: 1 1 100px;
+}

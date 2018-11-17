@@ -1,0 +1,142 @@
+/* Main container class */
+.main-container[_ngcontent-c0] {
+    background: #00f;
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 100%;
+    height: calc(100% + 64px);
+    align-items: stretch;
+}
+
+/* Main section class */
+.main-section[_ngcontent-c0] {
+    order: 1;
+    flex: 1 75%;
+    background: #f4f4f4;
+    min-height: calc(100vh - 84px - 64px);
+}
+
+/* Sort container class */
+.sort-container[_ngcontent-c0] {
+    padding: 40px;
+}
+
+li{
+  font-size: 25px;
+  padding-left: 35px;
+  padding-top: 5px;
+  background: url("/src/assets/img/characters.png") center left no-repeat;
+  background-size: contain;
+}
+
+ul {
+list-style-type:none;
+}
+
+/* Character container class */
+.characters-container[_ngcontent-c4] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Character box Class */
+.character-box[_ngcontent-c4]:nth-child(odd) {
+    margin-left: 20px;
+}
+.character-box[_ngcontent-c4] {
+    width: 350px;
+    height: 360px;
+    margin-left: 15px;
+    margin: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    background: #fff;
+    color: #2d2727;
+}
+
+/* Character Summary Class */
+.character-summary[_ngcontent-c4] {
+    display: flex;
+    height: 60%;
+    position: relative;
+}
+
+/* Character Image Class */
+.character-image[_ngcontent-c4] .circle[_ngcontent-c4] {
+    width: 53%;
+    height: 0;
+    padding-bottom: 53%;
+    border-radius: 50%;
+    background: #ebebeb;
+    position: absolute;
+    left: -40px;
+    top: -20px;
+    box-shadow: 3px 3px 10px 0 #a2a2a2;
+    transition: all .3s cubic-bezier(.25,.8,.25,1);
+}
+
+.character-image[_ngcontent-c4] {
+    display: inline-block;
+    width: 46%;
+    height: 100%;
+}
+
+/* Button class */
+.button[_ngcontent-c4] {
+    background: #ec1d23;
+    color: #fff;
+    padding: 15px;
+}
+
+/* Character info Class */
+.character-info[_ngcontent-c4] {
+    display: inline-block;
+    position: relative;
+    width: 54%;
+    height: 100%;
+}
+.character-info[_ngcontent-c4] .name[_ngcontent-c4] {
+    font-size: 25px;
+    font-weight: bolder;
+    width: 100%;
+    max-width: 189px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.character-info[_ngcontent-c4] .wrapper[_ngcontent-c4] {
+    position: absolute;
+    top: -15px;
+}
+
+/* Related comic title Class */
+.related-comics-title[_ngcontent-c4] {
+    height: 10%;
+}
+
+/* Characters related comics Class */
+.character-related-comics[_ngcontent-c4] {
+    height: 30%;
+}
+
+/* Related comic wrapper Class */
+.related-comics-wrapper[_ngcontent-c4] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 100%;
+}
+
+/* Favourites section class */
+.favourites-section[_ngcontent-c0] {
+    order: 2;
+    flex: 1 25%;
+    background: #ebebeb;
+    text-align: center;
+}
+
+section, div {
+    display: block;
+}
