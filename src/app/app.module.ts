@@ -6,15 +6,23 @@ import { HeaderComponent } from './shared/header/header.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
+import { HttpClientModule} from '@angular/common/http';
+import { Md5 } from "ts-md5/dist/md5";
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     PrincipalComponent,
-    FooterComponent
+    FooterComponent,
+
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
