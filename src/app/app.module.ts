@@ -8,6 +8,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 
 import { HttpClientModule} from '@angular/common/http';
 import { Md5 } from "ts-md5/dist/md5";
+import { ComicComponent } from './pages/comic/comic.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { Md5 } from "ts-md5/dist/md5";
     HeaderComponent,
     PrincipalComponent,
     FooterComponent,
+    ComicComponent,
 
 
   ],
