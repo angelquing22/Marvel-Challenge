@@ -9,7 +9,6 @@ var Public_key = "edb3e58df00feaf31d321b49c2bb0ab8";
 var TimeStamp = new Date().getTime();
 var hash = Md5.hashStr(TimeStamp + Private_Key + Public_key).toString();
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -18,16 +17,21 @@ export class InfoService {
 
   info: InfoPagina = {};
 
-   constructor(private _http: HttpClient) {
-     this.CargarInfo();
-   }
-   private CargarInfo(){
-     this._http.get('http://gateway.marvel.com/v1/public/characters/1011334?ts=' + TimeStamp + '&apikey=' + Public_key + '&hash=' + hash)
-      .subscribe( (resp : any) =>{
-        //this.info = resp;
-        console.log(resp.data.results['0']);
-      });
+  constructor(private _http: HttpClient) {
+   //  this.CargarInfo();
+  }
 
-
-    }
+  public cargarInfo(id){
+    return new Promise((resolve,reject)=>{
+      try {
+       this._http.get('http://gateway.marvel.com/v1/public/characters/'+id+'?ts=' + TimeStamp + '&apikey=' + Public_key + '&hash=' + hash)
+       .subscribe((resp : any) =>{
+         resolve(resp.data.results['0']);
+         // console.log({hero:resp.data.results['0']});
+       });
+     } catch (error) {
+       reject(error);
+     }
+    });
+  }
 }

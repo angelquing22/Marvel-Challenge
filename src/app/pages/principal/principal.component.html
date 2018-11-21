@@ -14,19 +14,20 @@
     </section>
 
     <section _ngcontent-c4="" class="characters-container">
-      <div _ngcontent-c4="" class="character-box">
+
+      <div *ngFor="let hero of heros" _ngcontent-c4="" class="character-box">
         <div _ngcontent-c4="" class="character-summary">
           <div _ngcontent-c4="" class="character-image">
             <div _ngcontent-c4="" class="circle" style="background-image: url('/src/assets/img/spider-man.png'); background-size: cover;">
             </div>
           </div>
-          <div _ngcontent-c4="" class="character-info">
+          <div _ngcontent-c4="" class="character-info" >
                         <div _ngcontent-c4="" class="wrapper">
                             <div _ngcontent-c4="" class="name">
-                              {{ service.info.name}}
+                              {{ hero.name }}
                             </div>
                             <p _ngcontent-c4="">
-                              {{ service.info.description }}
+                              {{ hero.description }}
                             </p>
                             <button _ngcontent-c4="" class="button">VIEW MORE</button>
                         </div>
@@ -61,7 +62,7 @@
           </div>
         </div>
       </div>
-      <div _ngcontent-c4="" class="character-box">
+      <!-- <div _ngcontent-c4="" class="character-box">
         <div _ngcontent-c4="" class="character-summary">
           <div _ngcontent-c4="" class="character-image">
             <div _ngcontent-c4="" class="circle" style="background-image: url(/src/assets/img/black-widow.png); background-size: cover;">
@@ -395,8 +396,8 @@
             </div>
           </div>
         </div>
-      </div>
-      <div _ngcontent-c4="" class="character-box">
+      </div> -->
+      <!-- <div _ngcontent-c4="" class="character-box">
         <div _ngcontent-c4="" class="character-summary">
           <div _ngcontent-c4="" class="character-image">
             <div _ngcontent-c4="" class="circle" style="background-image: url('/src/assets/img/captain-marvel.jpg'); background-size: cover;">
@@ -518,7 +519,7 @@
             &gt;
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
   </div>
   <aside _ngcontent-c0="" class="favourites-section">
