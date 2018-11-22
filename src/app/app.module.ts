@@ -9,6 +9,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HttpClientModule} from '@angular/common/http';
 import { Md5 } from "ts-md5/dist/md5";
 import { ComicComponent } from './pages/comic/comic.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -24,6 +25,8 @@ import { ComicComponent } from './pages/comic/comic.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgxPaginationModule
+
 
   ],
   providers: [],

@@ -12,23 +12,25 @@ export class PrincipalComponent implements OnInit {
       results:[]}
   }
 
-  private pages = [1,2,3,4,5];
+  //private pages = [1,2,3,4,5];
 
   constructor( public service : InfoService) {
-        this.goToPage(0);
+      this.goToPage;
       }
 
-pagin(page){
-  //let page = 2;
-  this.goToPage(page);
-  console.log('onclick'+page)
-}
+// pagin(page){
+//   //let page = 2;
+//   this.goToPage(page);
+//   console.log('onclick'+page)
+// }
 
-goToPage(page){
-  this.service.loadOffset(page*10,10).then(datos=>{
+//pageActual: number = 1;
+
+goToPage(){
+  this.service.loadOffset(10,10).then(datos=>{
   this.heros = datos;
-//       //console.log(datos);
-console.log(this.heros)
+  //console.log(datos);
+  console.log(this.heros)
   },
   error=>{
     console.log({error:error})
