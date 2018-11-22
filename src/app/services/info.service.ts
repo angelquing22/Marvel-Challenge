@@ -21,12 +21,28 @@ export class InfoService {
    //  this.CargarInfo();
   }
 
-  public cargarInfo(id){
+  public loadById(id){
     return new Promise((resolve,reject)=>{
       try {
        this._http.get('http://gateway.marvel.com/v1/public/characters/'+id+'?ts=' + TimeStamp + '&apikey=' + Public_key + '&hash=' + hash)
        .subscribe((resp : any) =>{
-         resolve(resp.data.results['0']);
+         //resolve(resp.data.results['0']);
+         resolve(resp);
+         // console.log({hero:resp.data.results['0']});
+       });
+     } catch (error) {
+       reject(error);
+     }
+    });
+  }
+  public loadOffset(offset,limit){
+    return new Promise((resolve,reject)=>{
+      try {
+        //http://gateway.marvel.com/v1/public/characters?apikey=edb3e58df00feaf31d321b49c2bb0ab8&ts=2&hash=751904b871923715ddbb98a17da33888&offset=0&limit=10
+       this._http.get('http://gateway.marvel.com/v1/public/characters?ts=' + TimeStamp + '&apikey=' + Public_key + '&hash=' + hash + '&offset='+offset+ '&limit='+ limit)
+       .subscribe((resp : any) =>{
+         //resolve(resp.data.results['0']);
+         resolve(resp);
          // console.log({hero:resp.data.results['0']});
        });
      } catch (error) {
