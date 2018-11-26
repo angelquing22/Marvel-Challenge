@@ -9,7 +9,7 @@ import { InfoService } from '../../services/info.service';
 export class PrincipalComponent implements OnInit {
   private heros :any ={
     data:{
-      results:[ { comics:{ items: []} } ]
+      results:[]
   } }
 
 
