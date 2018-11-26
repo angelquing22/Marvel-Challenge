@@ -15,10 +15,12 @@
 
     <section _ngcontent-c4="" class="characters-container">
 
-      <div *ngFor="let hero of heros.data.results | paginate : {itemsPerPage: 10, currentPage: pageActual}" _ngcontent-c4="" class="character-box">
+      <div *ngFor="let hero of heros.data.results | paginate : {itemsPerPage: 10, currentPage: pageActual}" *nFor= "let comic of heros.comics.items" _ngcontent-c4="" class="character-box">
         <div _ngcontent-c4="" class="character-summary">
           <div _ngcontent-c4="" class="character-image">
-            <div _ngcontent-c4="" class="circle" style="background-image: url(''); background-size: cover;">
+            <div _ngcontent-c4="" class="circle" style="background-image: url('{{hero.thumbnail.path.extension}}'); background-size: cover;">
+
+
             </div>
           </div>
           <div _ngcontent-c4="" class="character-info" >
@@ -33,18 +35,17 @@
                         </div>
           </div>
         </div>
-        <div _ngcontent-c4="" class="related-comics-title">
+        <div  _ngcontent-c4="" class="related-comics-title">
               <h3 _ngcontent-c4="">Related comics</h3>
         </div>
         <div _ngcontent-c4="" class="character-related-comics">
           <div _ngcontent-c4="" class="related-comics-wrapper">
             <div _ngcontent-c4="">
               <div _ngcontent-c4="" class="related-comic">
-                Spider-Man/Deadpool
-                #11
+
               </div>
             </div>
-            <div _ngcontent-c4="">
+            <!-- <div _ngcontent-c4="">
               <div _ngcontent-c4="" class="related-comic">
                 Spidey #12
               </div>
@@ -58,7 +59,7 @@
               <div _ngcontent-c4="" class="related-comic">
                 Avengers #1
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

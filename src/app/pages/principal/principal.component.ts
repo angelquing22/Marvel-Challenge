@@ -9,13 +9,15 @@ import { InfoService } from '../../services/info.service';
 export class PrincipalComponent implements OnInit {
   private heros :any ={
     data:{
-      results:[]}
-  }
+      results:[ { comics:{ items: []} } ]
+  } }
+
+
 
   //private pages = [1,2,3,4,5];
 
   constructor( public service : InfoService) {
-      this.goToPage;
+      this.goToPage();
       }
 
 // pagin(page){
@@ -26,15 +28,37 @@ export class PrincipalComponent implements OnInit {
 
 //pageActual: number = 1;
 
-goToPage(){
-  this.service.loadOffset(10,10).then(datos=>{
-  this.heros = datos;
-  //console.log(datos);
-  console.log(this.heros)
-  },
-  error=>{
-    console.log({error:error})
-  });
+//goToPage(){
+  // this.service.loadOffset(10,10).then(datos=>{
+  // this.heros = datos;
+  // //console.log(datos);
+  // console.log(this.heros)
+  // },
+  // error=>{
+  //   console.log({error:error})
+  // });
+
+private async goToPage(){
+  let totalDeRegistros = 1491;
+  let totalCiclos = totalDeRegistros/100;
+  for (let i = 0; i < totalCiclos; i++) {
+
+  let ord = await this.service.loadOffset(i*100,100).then(datos=>{
+    let dat:any = datos;
+    this.heros['data']['results']= this.heros['data']['results'].concat(dat['data']['results']);
+    //this.heros.data.resuts;
+
+    //Read image
+    // let thumbnail = this.heros.data.results[0].thumbnail;
+    // let imgAN = thumbnail.path + '/standard_large' + '.' + thumbnail.extension;
+
+  console.log(datos);
+    },
+     error=>{
+       console.log({error:error})
+     });
+ }
+ console.log(this.heros)
 }
 
   ngOnInit() {
