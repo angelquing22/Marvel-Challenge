@@ -1,3 +1,9 @@
+.imgRedonda {
+    width:150px;
+    height:150px;
+    border-radius:150px;
+}
+
 /* Main container class */
 .main-container[_ngcontent-c0] {
     background: #00f;

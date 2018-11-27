@@ -9,9 +9,9 @@
     flex: 1 1 100%;
 }
 
-.character-poster[_ngcontent-c5] {
-    width: 216px;
-    height: 324px;
+.character-poster {
+    width: 300px;
+    height: 400px;
 }
 
 .character-info[_ngcontent-c5] {

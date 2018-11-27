@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InfoService } from '../../services/info.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-comic',
@@ -8,20 +9,35 @@ import { InfoService } from '../../services/info.service';
 })
 export class ComicComponent implements OnInit {
 
-  constructor( public service : InfoService) { }
+  private comics :any ={
+    data:{
+      results:[
+        {
 
-  private heros :any=[] ;
-  ngOnInit() {
-    let ids = ['1009610','1009189','1009220','1009718','1009262','1009215','1017327','1009664','1009351','1009685'];
-    for (let i = 0; i < ids.length; i++) {
-          this.service.loadById(ids[i]).then(datos=>{
-          this.heros.push(datos);
-          //console.log(datos);
-        },
-        error=>{
-          console.log({error:error})
-        });
+        }
+      ]
     }
-    console.log(this.heros)
   }
+
+  // constructor( public service : InfoService) {
+  // //  this.comics =params.comocs
+  // }
+
+  constructor ( private route:ActivatedRoute, public servicio: InfoService){}
+
+  ngOnInit() {
+    this.route.params.subscribe( parametros =>{
+      console.log(parametros['id']);
+      //console.log(parametros['id']);
+
+      this.servicio.loadById(parametros['id']).then( comics =>{
+        this.comics = comics;
+
+        console.log(comics);
+      });
+
+    })
+
+  }
+
 }

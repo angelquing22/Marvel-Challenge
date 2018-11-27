@@ -11,6 +11,9 @@ import { Md5 } from "ts-md5/dist/md5";
 import { ComicComponent } from './pages/comic/comic.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 
+//Rutas
+import { appRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    appRoutingModule
 
 
   ],

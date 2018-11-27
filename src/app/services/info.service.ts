@@ -15,7 +15,8 @@ var hash = Md5.hashStr(TimeStamp + Private_Key + Public_key).toString();
 
 export class InfoService {
 
-  info: InfoPagina = {};
+  //info: InfoPagina = {};
+
 
   constructor(private _http: HttpClient) {
    //  this.CargarInfo();
@@ -24,7 +25,7 @@ export class InfoService {
   public loadById(id){
     return new Promise((resolve,reject)=>{
       try {
-       this._http.get('http://gateway.marvel.com/v1/public/characters/'+id+'?ts=' + TimeStamp + '&apikey=' + Public_key + '&hash=' + hash)
+       this._http.get('http://gateway.marvel.com/v1/public/characters/'+id+'/comics?ts=' + TimeStamp + '&apikey=' + Public_key + '&hash=' + hash)
        .subscribe((resp : any) =>{
          //resolve(resp.data.results['0']);
          resolve(resp);
@@ -35,6 +36,7 @@ export class InfoService {
      }
     });
   }
+
   public loadOffset(offset,limit){
     return new Promise((resolve,reject)=>{
       try {
@@ -50,4 +52,39 @@ export class InfoService {
      }
     });
   }
+
+  public loadComic(offset,limit){
+    return new Promise((resolve,reject)=>{
+      try {
+        //http://gateway.marvel.com/v1/public/characters?apikey=edb3e58df00feaf31d321b49c2bb0ab8&ts=2&hash=751904b871923715ddbb98a17da33888&offset=0&limit=10
+       this._http.get('http://gateway.marvel.com/v1/public/comics?ts=' + TimeStamp + '&apikey=' + Public_key + '&hash=' + hash + '&offset='+offset+ '&limit='+ limit)
+       .subscribe((resp : any) =>{
+         //resolve(resp.data.results['0']);
+         resolve(resp);
+         // console.log({hero:resp.data.results['0']});
+       });
+     } catch (error) {
+       reject(error);
+     }
+    });
+  }
+
+  public loadComics(collectionURI){
+    return new Promise((resolve,reject)=>{
+      try {
+        //http://gateway.marvel.com/v1/public/characters?apikey=edb3e58df00feaf31d321b49c2bb0ab8&ts=2&hash=751904b871923715ddbb98a17da33888&offset=0&limit=10
+       // this._http.get('http://gateway.marvel.com/v1/public/series/1945?ts=' + TimeStamp + '&apikey=' + Public_key + '&hash=' + hash )
+       this._http.get(collectionURI+'?ts=' + TimeStamp + '&apikey=' + Public_key + '&hash=' + hash )
+       .subscribe((resp : any) =>{
+         //resolve(resp.data.results['0']);
+         resolve(resp);
+         // console.log({hero:resp.data.results['0']});
+       });
+     } catch (error) {
+       reject(error);
+     }
+    });
+  }
+
+
 }

@@ -16,12 +16,17 @@
     <section _ngcontent-c4="" class="characters-container">
 
       <div *ngFor="let hero of heros.data.results | paginate : {itemsPerPage: 10, currentPage: pageActual}" _ngcontent-c4="" class="character-box">
-        <div _ngcontent-c4="" class="character-summary">
+        <div  _ngcontent-c4="" class="character-summary">
           <div _ngcontent-c4="" class="character-image">
-            <div _ngcontent-c4="" class="circle" style="background-image: url('{{hero.thumbnail.path.extension}}'); background-size: cover;">
 
+            <!-- <div   _ngcontent-c4="" class="circle" style="background-image: url({{'hero.thumbnail.path + '.' + hero.thumbnail.extension'); background-size: cover;">
+            </div> -->
+            <div _ngcontent-c4="">
+              <img src="{{hero.thumbnail.path + '.' + hero.thumbnail.extension}}"  class='imgRedonda'>
 
             </div>
+
+
           </div>
           <div _ngcontent-c4="" class="character-info" >
                         <div _ngcontent-c4="" class="wrapper">
@@ -31,10 +36,11 @@
                             <p _ngcontent-c4="">
                               {{ hero.description }}
                             </p>
-                            <button _ngcontent-c4="" class="button">VIEW MORE</button>
+                            <button routerLink="comic/{{hero.id}}" _ngcontent-c4="" class="button" >VIEW MORE</button>
                         </div>
           </div>
         </div>
+
         <div  _ngcontent-c4="" class="related-comics-title">
               <h3 _ngcontent-c4="">Related comics</h3>
         </div>
@@ -43,6 +49,9 @@
             <div _ngcontent-c4="">
               <div _ngcontent-c4="" class="related-comic">
 
+                <!-- <div *ngFor = "let comic of hero.comics.items">
+                  {{ comic.name }}
+                </div> -->
               </div>
             </div>
             <!-- <div _ngcontent-c4="">

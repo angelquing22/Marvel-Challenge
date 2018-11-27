@@ -4,41 +4,47 @@
     </div>
 </section>
 
-<section _ngcontent-c5="" class="character-section-container">
-  <div *ngFor="let comic of heros" _ngcontent-c5="" class="character-container">
-    <div _ngcontent-c5="" class="character-poster" style="background-image: url(&quot;http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784/portrait_incredible.jpg&quot;); background-size: cover;">
+<section  _ngcontent-c5="" class="character-section-container">
+
+  <div   _ngcontent-c5="" class="character-container">
+    <div _ngcontent-c5="">
+
+      <!-- <img src="{{poster.thumbnail.path + '.' + poster.thumbnail.extension}}" class="character-poster" > -->
+
     </div>
-    <div _ngcontent-c5="" class="character-info">
+    <div _ngcontent-c5="" class="character-info"></div>
       <h1 _ngcontent-c5="">
-        {{comic.name}}
+
       </h1>
       <p _ngcontent-c5=""></p>
     </div>
-    <div _ngcontent-c5="" class="btn-return-stl">&lt;
+    <div routerLink="" _ngcontent-c5="" class="btn-return-stl">&lt;
     </div>
-  </div>
+
   <div _ngcontent-c5="" class="comics-title">
     <h2 _ngcontent-c5="">
       Comics
     </h2>
   </div>
-  <div _ngcontent-c5="" class="comics-container">
+  <div  *ngFor="let hola of comics.data.results" _ngcontent-c5="" class="comics-container">
     <div _ngcontent-c5="" class="comic-box">
       <div _ngcontent-c5="" class="comic-description-container">
-        <div _ngcontent-c5="" class="comic-poster" style="background-image: url(&quot;http://i.annihil.us/u/prod/marvel/i/mg/d/03/58dd080719806/portrait_xlarge.jpg&quot;); background-size: cover;">
+        <div  _ngcontent-c5="">
+        <img src="{{hola.thumbnail.path + '.' + hola.thumbnail.extension}}" class="character-poster" >
+
         </div>
-        <div _ngcontent-c5="" class="comic-info">
+        <div   _ngcontent-c5="" class="comic-info">
           <h3 _ngcontent-c5="">
-            {{comic.items}}
+              {{hola.title}}
           </h3>
-          <h4 _ngcontent-c5="">
-            Print price : $2.99
+          <h4  *ngIf="hola.prices?.length>0" _ngcontent-c5="">
+              {{hola.prices[0].price}}
           </h4>
           <h4 _ngcontent-c5="">
-            Digital price : $1.99
+            {{ hola.pageCount}}
           </h4>
           <h4 _ngcontent-c5="">
-            Pages : 32
+
           </h4>
         </div>
       </div>
