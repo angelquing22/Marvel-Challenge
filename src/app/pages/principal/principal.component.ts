@@ -14,7 +14,7 @@ export class PrincipalComponent implements OnInit {
   }
 }
   constructor( public service : InfoService,
-                private route : ActivatedRoute) {
+                private route : ActivatedRoute ) {
       this.goToPage();
       }
 
@@ -35,26 +35,13 @@ private async goToPage(){
   //console.log(this.heros)
 }
 
-private comics :any ={
-  data: {
-    results: [
-      { title:"",
-        description:""}
-    ]
-  }
-}
-
-private loadComics(collectionURI){
-    this.service.loadComics(collectionURI).then(datos=>{
-    this.comics = datos;
-    })
-}
 
   ngOnInit() {
 
     this.route.params
     .subscribe( params =>{
       console.log(params['character']);
+      this.service.BuscarPersonaje(params['character']);
     });
   }
 }

@@ -1,3 +1,12 @@
+.favourites-section[_ngcontent-c0] {
+
+    order: 2;
+    flex: 1 25%;
+    background: #ebebeb;
+    text-align: center;
+    color: #2d2727;
+}
+
 .main-title-container[_ngcontent-c5] {
     padding: 40px;
 }
@@ -10,9 +19,14 @@
 }
 
 .character-poster {
-    width: 300px;
-    height: 400px;
+    width: 250px;
+    height: 250px;
 }
+.comic-poster[_ngcontent-c5] {
+    width: 150px;
+    height: 225px;
+}
+
 
 .character-info[_ngcontent-c5] {
     width: 316px;
@@ -67,7 +81,6 @@ p {
 
 .cta[_ngcontent-c5] {
     -webkit-box-flex: 1;
-    -ms-flex: 1 1 100%;
     flex: 1 1 100%;
     background: #2d2727;
     height: 15%;

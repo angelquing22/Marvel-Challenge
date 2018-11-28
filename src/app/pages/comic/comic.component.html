@@ -7,12 +7,10 @@
 <section  _ngcontent-c5="" class="character-section-container">
 
   <div   _ngcontent-c5="" class="character-container">
-    <div _ngcontent-c5="">
-
+    <div _ngcontent-c5="" class="character-poster">
       <!-- <img src="{{poster.thumbnail.path + '.' + poster.thumbnail.extension}}" class="character-poster" > -->
-
     </div>
-    <div _ngcontent-c5="" class="character-info"></div>
+    <div  _ngcontent-c5="" class="character-info"></div>
       <h1 _ngcontent-c5="">
 
       </h1>
@@ -26,31 +24,34 @@
       Comics
     </h2>
   </div>
-  <div  *ngFor="let hola of comics.data.results" _ngcontent-c5="" class="comics-container">
-    <div _ngcontent-c5="" class="comic-box">
+  <div   _ngcontent-c5="" class="comics-container">
+    <div *ngFor="let hola of comics.data.results" _ngcontent-c5="" class="comic-box">
       <div _ngcontent-c5="" class="comic-description-container">
         <div  _ngcontent-c5="">
-        <img src="{{hola.thumbnail.path + '.' + hola.thumbnail.extension}}" class="character-poster" >
+        <img src="{{hola.thumbnail?.path + '.' + hola.thumbnail?.extension}}" class="character-poster" >
 
         </div>
         <div   _ngcontent-c5="" class="comic-info">
           <h3 _ngcontent-c5="">
-              {{hola.title}}
+              Comic: {{hola.title}}
           </h3>
           <h4  *ngIf="hola.prices?.length>0" _ngcontent-c5="">
-              {{hola.prices[0].price}}
+              Precio: {{hola.prices[0].price}}
           </h4>
           <h4 _ngcontent-c5="">
-            {{ hola.pageCount}}
+              Total de páginas: {{ hola.pageCount}}
           </h4>
           <h4 _ngcontent-c5="">
 
           </h4>
         </div>
       </div>
-      <div _ngcontent-c5="" class="cta">
+      <div _ngcontent-c5="" class="cta" ng-click=()>
         MORE
       </div>
     </div>
   </div>
+
+
+
 </section>
