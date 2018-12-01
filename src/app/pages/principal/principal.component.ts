@@ -15,7 +15,7 @@ export class PrincipalComponent implements OnInit {
 }
   constructor( public service : InfoService,
                 private route : ActivatedRoute ) {
-      this.goToPage();
+
       }
 
 private async goToPage(){
@@ -40,8 +40,18 @@ private async goToPage(){
 
     this.route.params
     .subscribe( params =>{
+      if(params.character===undefined){
+        this.service.extraerTodosLosHeroes().then(heroes=>{
+          this.heros.data.results=heroes;
+        });
+    }else{
       console.log(params['character']);
-      this.service.BuscarPersonaje(params['character']);
+      this.service.BuscarPersonaje(params['character']).then(dat=>{
+        this.heros.data.results=dat;
+
+      }
+      )
+    }
     });
   }
 }
