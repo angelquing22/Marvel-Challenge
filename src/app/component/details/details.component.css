@@ -1,0 +1,49 @@
+.main-title-container[_ngcontent-c5] {
+    padding: 40px;
+}
+
+.character-container[_ngcontent-c5] {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    -webkit-box-flex: 1;
+    flex: 1 1 100%;
+}
+
+.character-poster[_ngcontent-c5] {
+    width: 216px;
+    height: 324px;
+}
+
+.character-info[_ngcontent-c5] {
+    width: 316px;
+}
+
+.character-info[_ngcontent-c5] h1[_ngcontent-c5] {
+    font-size: 40px;
+    color: #ec1d23;
+    margin-bottom: 20px;
+}
+h1{
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  display: block;
+  font-weight: bold;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.btn-return-stl[_ngcontent-c5] {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    line-height: 25px;
+    text-align: center;
+    color: #fff;
+    background: #2d2727;
+}

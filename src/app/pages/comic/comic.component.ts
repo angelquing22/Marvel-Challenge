@@ -30,27 +30,7 @@ export class ComicComponent implements OnInit {
   // }
 
   constructor ( private route:ActivatedRoute, public servicio: InfoService)
-  {
-    this.goToPage();
-  }
-
-  private async goToPage(){
-    let totalDeRegistros = 1491;
-    let totalCiclos = totalDeRegistros/100;
-    for (let i = 0; i < totalCiclos; i++) {
-      let ord = await this.servicio.loadOffset(i*100,100).then(datos=>{
-        let dat:any = datos;
-        this.heros['data']['results']= this.heros['data']['results'].concat(dat['data']['results']);
-        //this.heros.data.resuts;
-        //console.log(datos);
-      },
-      error=>{
-        //console.log({error:error})
-      });
-    }
-    //console.log(this.heros)
-  }
-
+  {}
 
   ngOnInit() {
     this.route.params.subscribe( parametros =>{

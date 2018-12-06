@@ -1,0 +1,20 @@
+
+.favourites-section[_ngcontent-c0] {
+    -webkit-box-ordinal-group: 3;
+    order: 2;
+    flex: 1 25%;
+    background: #ebebeb;
+    text-align: center;
+    color: #2d2727;
+    margin: 0 0 0 850px;
+
+}
+
+.main-title-container[_ngcontent-c0] {
+    padding: 50px;
+
+}
+
+section, aside{
+    display: block;
+}

@@ -1,0 +1,19 @@
+<section _ngcontent-c5="">
+    <div _ngcontent-c5="" class="main-title-container">
+        <h1 _ngcontent-c5="">Character details</h1>
+    </div>
+</section>
+
+<div   *ngFor="let hola of comics.data.results" _ngcontent-c5="" class="character-container">
+  <div _ngcontent-c5="" class="character-poster">
+    <img src="{{hola.thumbnail?.path + '.' + hola.thumbnail?.extension}}" width="300px" height="324px">
+  </div>
+  <div  _ngcontent-c5="" class="character-info">
+    <h1 _ngcontent-c5="">
+    {{  hola.name }}
+    </h1>
+    <p _ngcontent-c5=""></p>
+  </div>
+  <div routerLink="" _ngcontent-c5="" class="btn-return-stl">&lt;
+  </div>
+</div>

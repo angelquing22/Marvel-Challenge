@@ -179,14 +179,13 @@ list-style-type:none;
 
 /* Favourites section class */
 .favourites-section[_ngcontent-c0] {
-
+  -webkit-box-ordinal-group: 3;
     order: 2;
     flex: 1 25%;
     background: #ebebeb;
     text-align: center;
     color: #2d2727;
 }
-
-section, div {
-    display: block;
+aside{
+  display: block;
 }

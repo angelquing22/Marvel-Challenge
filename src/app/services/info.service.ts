@@ -117,6 +117,21 @@ export class InfoService {
     });
   }
 
+  public loadById2(id){
+    return new Promise((resolve,reject)=>{
+      try {
+        this._http.get('http://gateway.marvel.com/v1/public/characters/'+id+'?ts=' + TimeStamp + '&apikey=' + Public_key + '&hash=' + hash)
+       .subscribe((resp : any) =>{
+         //resolve(resp.data.results['0']);
+         resolve(resp);
+         // console.log({hero:resp.data.results['0']});
+       });
+     } catch (error) {
+       reject(error);
+     }
+    });
+  }
+
   public loadOffset(offset,limit){
     return new Promise((resolve,reject)=>{
       try {
@@ -132,6 +147,23 @@ export class InfoService {
      }
     });
   }
+
+  public loadByIdComic(id){
+    return new Promise((resolve,reject)=>{
+      try {
+        this._http.get('http://gateway.marvel.com/v1/public/comics/'+id+'?ts=' + TimeStamp + '&apikey=' + Public_key + '&hash=' + hash)
+       .subscribe((resp : any) =>{
+         //resolve(resp.data.results['0']);
+         resolve(resp);
+         // console.log({hero:resp.data.results['0']});
+       });
+     } catch (error) {
+       reject(error);
+     }
+    });
+  }
+
+
 
 
 }

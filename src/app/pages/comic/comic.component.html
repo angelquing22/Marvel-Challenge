@@ -1,57 +1,56 @@
-<section _ngcontent-c5="">
-    <div _ngcontent-c5="" class="main-title-container">
-        <h1 _ngcontent-c5="">Character details</h1>
-    </div>
-</section>
+<section _ngcontent-c0 class="main-container">
 
-<section  _ngcontent-c5="" class="character-section-container">
+  <div _ngcontent-c0 class="main-section">
 
-  <div   _ngcontent-c5="" class="character-container">
-    <div _ngcontent-c5="" class="character-poster">
-      <!-- <img src="{{poster.thumbnail.path + '.' + poster.thumbnail.extension}}" class="character-poster" > -->
-    </div>
-    <div  _ngcontent-c5="" class="character-info"></div>
-      <h1 _ngcontent-c5="">
+    <app-details _nghost-c5>
+    </app-details>
 
-      </h1>
-      <p _ngcontent-c5=""></p>
-    </div>
-    <div routerLink="" _ngcontent-c5="" class="btn-return-stl">&lt;
-    </div>
+    <section  _ngcontent-c5="" class="character-section-container">
 
-  <div _ngcontent-c5="" class="comics-title">
-    <h2 _ngcontent-c5="">
-      Comics
-    </h2>
-  </div>
-  <div   _ngcontent-c5="" class="comics-container">
-    <div *ngFor="let hola of comics.data.results" _ngcontent-c5="" class="comic-box">
-      <div _ngcontent-c5="" class="comic-description-container">
-        <div  _ngcontent-c5="">
-        <img src="{{hola.thumbnail?.path + '.' + hola.thumbnail?.extension}}" class="character-poster" >
 
-        </div>
-        <div   _ngcontent-c5="" class="comic-info">
-          <h3 _ngcontent-c5="">
-              Comic: {{hola.title}}
-          </h3>
-          <h4  *ngIf="hola.prices?.length>0" _ngcontent-c5="">
-              Precio: {{hola.prices[0].price}}
-          </h4>
-          <h4 _ngcontent-c5="">
-              Total de páginas: {{ hola.pageCount}}
-          </h4>
-          <h4 _ngcontent-c5="">
 
-          </h4>
+      <div _ngcontent-c5="" class="comics-title">
+        <h2 _ngcontent-c5="">
+          Comics
+        </h2>
+      </div>
+
+      <div   _ngcontent-c5="" class="comics-container">
+        <div *ngFor="let hola of comics.data.results" _ngcontent-c5="" class="comic-box">
+          <div _ngcontent-c5="" class="comic-description-container">
+            <div  _ngcontent-c5="">
+            <img src="{{hola.thumbnail?.path + '.' + hola.thumbnail?.extension}}" class="character-poster" >
+
+            </div>
+            <div   _ngcontent-c5="" class="comic-info">
+              <h3 _ngcontent-c5="">
+                  Comic: {{hola.title}}
+              </h3>
+              <h4  *ngIf="hola.prices?.length>0" _ngcontent-c5="">
+                  Precio: {{hola.prices[0].price}}
+              </h4>
+              <h4 _ngcontent-c5="">
+                  Total de páginas: {{ hola.pageCount}}
+              </h4>
+              <h4 _ngcontent-c5="">
+
+              </h4>
+            </div>
+          </div>
+          <div _ngcontent-c5="" class="cta" routerLink="more/{{hola.id}}">
+            MORE
+          </div>
         </div>
       </div>
-      <div _ngcontent-c5="" class="cta" ng-click=()>
-        MORE
-      </div>
-    </div>
+    </section>
   </div>
 
-
+  <aside _ngcontent-c0="" class="favourites-section">
+        <div _ngcontent-c0="" class="main-title-container">
+            <h1 _ngcontent-c0="">My favourites</h1>
+        </div>
+        <app-favoritos _ngcontent-c0="" _nghost-c3="">
+        </app-favoritos>
+  </aside>
 
 </section>

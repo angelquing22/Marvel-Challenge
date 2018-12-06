@@ -1,0 +1,23 @@
+<section _ngcontent-c1="" class="comic-modal-container">
+    <div  _ngcontent-c1="" class="comic-modal-box">
+
+        <div *ngFor="let comic of comics.data.results" _ngcontent-c1="" class="comic-info-wrapper">
+            <div _ngcontent-c1="" class="comic-image">
+              <img _ngcontent-c1="" alt="" src="{{comic.thumbnail?.path + '.' + comic.thumbnail?.extension}}" width="280px" height="330px">
+            </div>
+            <div  _ngcontent-c1="" class="comic-info">
+                <h1 _ngcontent-c1="">
+                  {{comic.title}}
+                </h1>
+                <p _ngcontent-c1="">
+                  {{ comic.description}}
+                </p>
+            </div>
+        </div>
+        <div _ngcontent-c1="" class="comic-ctas">
+            <button _ngcontent-c1="" class="add-cta add-cta-disabled" ng-click="this.fun()">
+                  ADD TO FAVOURITE
+            </button>
+        </div>
+    </div>
+</section>

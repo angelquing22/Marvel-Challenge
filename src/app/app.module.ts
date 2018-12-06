@@ -11,8 +11,11 @@ import { Md5 } from "ts-md5/dist/md5";
 import { ComicComponent } from './pages/comic/comic.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 
-//Rutas
 import { appRoutingModule } from './app-routing.module';
+import { FavoritosComponent } from './shared/favoritos/favoritos.component';
+import {NgxAsideModule } from 'ngx-aside';
+import { DetailsComponent } from './component/details/details.component';
+import { MoreComponent } from './component/more/more.component';
 
 
 @NgModule({
@@ -22,6 +25,9 @@ import { appRoutingModule } from './app-routing.module';
     PrincipalComponent,
     FooterComponent,
     ComicComponent,
+    FavoritosComponent,
+    DetailsComponent,
+    MoreComponent,
 
 
   ],
@@ -29,7 +35,8 @@ import { appRoutingModule } from './app-routing.module';
     BrowserModule,
     HttpClientModule,
     NgxPaginationModule,
-    appRoutingModule
+    appRoutingModule,
+    NgxAsideModule
 
 
   ],

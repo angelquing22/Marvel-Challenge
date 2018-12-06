@@ -23,6 +23,7 @@
     "angular-filter": "^0.5.17",
     "angular-md5": "^0.1.10",
     "core-js": "^2.5.4",
+    "ngx-aside": "^1.4.2",
     "ngx-pagination": "^3.2.1",
     "rxjs": "^6.0.0",
     "ts-md5": "^1.2.4",
